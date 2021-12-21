@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 
+import Header from "./components/header/header";
 import Home from "./pages/Home/Home";
 import NotFound from "./pages/NotFound";
 
@@ -76,7 +77,12 @@ export class App extends Component {
   render() {
     const component = this.getComponent();
 
-    return <div>{component}</div>;
+    return (
+      <div className="App">
+        <Header />
+        {component}
+      </div>
+    );
   }
 }
 

@@ -8,7 +8,7 @@ import ProjectCover, {
 export class Home extends Component {
   render() {
     return (
-      <div className="App">
+      <div>
         <div id="projects">
           {this.props.projects.map((project, i) => (
             <ProjectCover project={project} key={i} />
