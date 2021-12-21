@@ -1,0 +1,28 @@
+#project-cover-box {
+  cursor: pointer;
+  width: 300px;
+  box-shadow: var(--shadow);
+}
+
+#project-cover-image {
+  height: 100px;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 350px;
+}
+
+#project-info {
+  margin-top: 10px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+#project-cover-title {
+  font-size: 1.2rem;
+}
+
+#project-cover-date {
+  text-align: right;
+  font-size: 0.8rem;
+}
