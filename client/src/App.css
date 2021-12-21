@@ -12,6 +12,7 @@
   margin: 0 auto;
   margin-bottom: 300px;
   max-width: 1000px;
+  min-width: 350px;
 }
 
 .App-logo {
