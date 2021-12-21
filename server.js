@@ -3,7 +3,19 @@ const path = require("path");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 
+/* Connect. */
 const db_secret = require("./config/keys").MONGO_URI;
+mongoose
+  .connect(db_secret, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  })
+  .then(() => {
+    console.log("MongoDB connected...");
+  })
+  .catch(error => {
+    console.log("error", error);
+  });
 
 const app = express();
 
