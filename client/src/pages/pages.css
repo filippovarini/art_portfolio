@@ -14,17 +14,14 @@
 /* =====
     BIO 
    ===== */
-#bio {
-  width: 80%;
-  margin: 0 auto;
-  max-width: 1000px;
-}
-
-#bio-title {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
 .bio-paragraph {
   margin-bottom: 10px;
+}
+
+/* =========
+    GENERAL
+   ========= */
+.page-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
 }

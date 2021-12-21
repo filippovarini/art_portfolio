@@ -6,7 +6,7 @@ export class Bio extends Component {
   render() {
     return (
       <div id="bio">
-        <p id="bio-title">{text.bioTitle}</p>
+        <p className="page-title">{text.bioTitle}</p>
         <p className="bio-paragraph">{text.bioP1}</p>
         <p className="bio-paragraph">{text.bioP2}</p>
         <p className="bio-paragraph">{text.bioP3}</p>

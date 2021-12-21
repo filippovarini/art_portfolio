@@ -5,6 +5,7 @@ import Header from "./components/header/header";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import Bio from "./pages/Bio";
+import Contacts from "./pages/Contacts";
 
 const projects = [
   {
@@ -74,6 +75,10 @@ export class App extends Component {
       switch (params[0]) {
         case "bio":
           component = <Bio />;
+          break;
+        case "contact":
+          component = <Contacts />;
+          break;
       }
     }
 
