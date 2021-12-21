@@ -4,6 +4,11 @@
 
 .App {
   font-family: "Courier Prime", monospace;
+  min-height: 100vh;
+}
+
+#page-wrapper {
+  margin-bottom: 300px;
 }
 
 .App-logo {

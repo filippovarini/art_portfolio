@@ -1,0 +1,30 @@
+/* ======
+    HOME 
+   ====== */
+#projects {
+  width: 80%;
+  min-width: 350px;
+  margin: 0 auto;
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* =====
+    BIO 
+   ===== */
+#bio {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+#bio-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.bio-paragraph {
+  margin-bottom: 10px;
+}

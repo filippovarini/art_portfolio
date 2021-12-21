@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import "./App.css";
 
 import Header from "./components/header/header";
-import Home from "./pages/Home/Home";
+import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
+import Bio from "./pages/Bio";
 
 const projects = [
   {
@@ -69,6 +70,11 @@ export class App extends Component {
 
     if (params.length == 0) {
       component = <Home projects={projects} />;
+    } else if (params.length > 0) {
+      switch (params[0]) {
+        case "bio":
+          component = <Bio />;
+      }
     }
 
     return component;
@@ -80,7 +86,7 @@ export class App extends Component {
     return (
       <div className="App">
         <Header />
-        {component}
+        <div id="page-wrapper">{component}</div>
       </div>
     );
   }

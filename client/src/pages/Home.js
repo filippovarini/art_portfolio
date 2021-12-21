@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import "./Home.css";
+import "./pages.css";
 
 import ProjectCover, {
   project_cover
-} from "../../components/project_cover/project_cover";
+} from "../components/project_cover/project_cover";
 
 export class Home extends Component {
   render() {
