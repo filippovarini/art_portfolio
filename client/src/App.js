@@ -71,11 +71,11 @@ export class App extends Component {
 
   getComponent() {
     const path = window.location.pathname;
-    const params = path.split("/").filter(param => param != "");
+    const params = path.split("/").filter(param => param !== "");
 
     let component = <NotFound />;
 
-    if (params.length == 0) {
+    if (params.length === 0) {
       component = <Home projects={projects} />;
     } else if (params.length > 0) {
       switch (params[0]) {
@@ -90,6 +90,8 @@ export class App extends Component {
             const project = this.getProject(params[1]);
             component = <Project project={project} />;
           }
+          break;
+        default:
           break;
       }
     }

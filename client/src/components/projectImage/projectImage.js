@@ -3,11 +3,11 @@ import "./projectImage.css";
 
 export class projectImage extends Component {
   getLeftArrowStyle = () => {
-    return this.props.index == 0 ? { visibility: "hidden" } : null;
+    return this.props.index === 0 ? { visibility: "hidden" } : null;
   };
 
   getRightArrowStyle = () => {
-    return this.props.images.length == this.props.index + 1
+    return this.props.images.length === this.props.index + 1
       ? { visibility: "hidden" }
       : null;
   };
@@ -28,7 +28,7 @@ export class projectImage extends Component {
           ></i>
           <img
             src={this.props.images[this.props.index]}
-            alt="project image"
+            alt="project"
             id="zoomed-image"
           />
           <i

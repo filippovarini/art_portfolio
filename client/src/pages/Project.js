@@ -18,16 +18,16 @@ export class Project extends Component {
   };
 
   prevImage = () => {
-    if (this.state.imageIndex == 0) {
-      throw "Prev image out of bound";
+    if (this.state.imageIndex === 0) {
+      throw new Error("Prev image out of bound");
     } else {
       this.setState({ imageIndex: this.state.imageIndex - 1 });
     }
   };
 
   nextImage = () => {
-    if (this.state.imageIndex == this.props.project.images - 1) {
-      throw "Next image out of bound";
+    if (this.state.imageIndex === this.props.project.images - 1) {
+      throw new Error("Next image out of bound");
     } else {
       this.setState({ imageIndex: this.state.imageIndex + 1 });
     }
@@ -54,6 +54,7 @@ export class Project extends Component {
             <img
               src={image}
               key={i}
+              alt="project"
               className="project-image"
               onClick={this.redirect}
             ></img>

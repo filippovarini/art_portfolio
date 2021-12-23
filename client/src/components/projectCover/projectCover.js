@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./project_cover.css";
+import "./projectCover.css";
 
 export class project_cover extends Component {
   redirect = () => {
