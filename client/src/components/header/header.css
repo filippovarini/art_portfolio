@@ -13,6 +13,7 @@
   font-size: 5rem;
   letter-spacing: 3rem;
   position: relative;
+  cursor: pointer;
   right: -1.5rem;
 }
 

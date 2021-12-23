@@ -1,13 +1,49 @@
 import React, { Component } from "react";
+import ProjectImage from "../components/projectImage/projectImage";
 
 export class Project extends Component {
+  state = {
+    imageIndex: 0,
+    imageZoomed: false
+  };
+
+  toggleImageZoomed = () => {
+    this.setState({ imageZoomed: !this.state.imageZoomed });
+  };
+
   redirect = e => {
-    window.location = `${
-      window.location.pathname
-    }/${this.props.project.images.indexOf(e.target.src)}`;
+    const index = this.props.project.images.indexOf(e.target.src);
+    this.setState({ imageIndex: index });
+    this.toggleImageZoomed();
+  };
+
+  prevImage = () => {
+    if (this.state.imageIndex == 0) {
+      throw "Prev image out of bound";
+    } else {
+      this.setState({ imageIndex: this.state.imageIndex - 1 });
+    }
+  };
+
+  nextImage = () => {
+    if (this.state.imageIndex == this.props.project.images - 1) {
+      throw "Next image out of bound";
+    } else {
+      this.setState({ imageIndex: this.state.imageIndex + 1 });
+    }
   };
 
   render() {
+    const imageZoomed = this.state.imageZoomed ? (
+      <ProjectImage
+        images={this.props.project.images}
+        index={this.state.imageIndex}
+        nextImage={this.nextImage}
+        prevImage={this.prevImage}
+        hide={this.toggleImageZoomed}
+      />
+    ) : null;
+
     return (
       <div id="project">
         <p className="page-title">{this.props.project.title}</p>
@@ -23,6 +59,7 @@ export class Project extends Component {
             ></img>
           ))}
         </div>
+        {imageZoomed}
       </div>
     );
   }

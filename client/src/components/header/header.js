@@ -3,11 +3,15 @@ import text from "../../static/text.json";
 import "./header.css";
 
 export class header extends Component {
+  redirectHome = () => (window.location = "/");
+
   render() {
     return (
       <div id="header">
         <div id="header-wrapper">
-          <p id="logo">{text.logo}</p>
+          <p id="logo" onClick={this.redirectHome}>
+            {text.logo}
+          </p>
           <div id="nav">
             <a href="/" className="header-nav">
               {text.projectsNavigator}

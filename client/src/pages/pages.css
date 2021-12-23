@@ -54,17 +54,18 @@
   text-align: right;
   margin-top: -10px;
   margin-bottom: 10px;
+  font-weight: bold;
 }
 
 #images-container {
   margin-top: 30px;
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .project-image {
-  width: 250px;
+  width: 100%;
   height: auto;
   cursor: pointer;
 }
