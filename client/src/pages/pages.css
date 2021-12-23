@@ -2,7 +2,6 @@
     HOME 
    ====== */
 #projects {
-  width: 80%;
   min-width: 350px;
   margin: 0 auto;
   display: flex;
@@ -16,6 +15,63 @@
    ===== */
 .bio-paragraph {
   margin-bottom: 10px;
+}
+
+/* ==========
+    CONTACTS
+   ========== */
+#contacts-container {
+  box-shadow: var(--shadow);
+  box-sizing: border-box;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-ico-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.contact-ico {
+  width: 35px;
+  font-size: 2rem;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.contact-text {
+  color: black;
+  font-size: 1.5rem;
+}
+
+/* =========
+    PROJECT
+   ========= */
+#date {
+  text-align: right;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+#images-container {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.project-image {
+  width: 250px;
+  height: auto;
+  cursor: pointer;
+}
+
+.project-image:hover {
+  transform: scale(1.05);
+  transition: all 1s;
 }
 
 /* =========

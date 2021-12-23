@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import Bio from "./pages/Bio";
 import Contacts from "./pages/Contacts";
+import Project from "./pages/Project";
 
 const projects = [
   {
@@ -18,7 +19,8 @@ const projects = [
       "https://i.picsum.photos/id/684/200/300.jpg?hmac=nn1tmB9fSTQO4MaL20HOedMOv4HNILJxIjPvOPhuxbE",
       "https://i.picsum.photos/id/367/200/300.jpg?hmac=9v6fvZlygxFPleXOePw645QmRd9ytp91VGVQaolJKIk",
       "https://i.picsum.photos/id/367/200/300.jpg?hmac=9v6fvZlygxFPleXOePw645QmRd9ytp91VGVQaolJKIk",
-      "https://i.picsum.photos/id/367/200/300.jpg?hmac=9v6fvZlygxFPleXOePw645QmRd9ytp91VGVQaolJKIk"
+      "https://i.picsum.photos/id/367/200/300.jpg?hmac=9v6fvZlygxFPleXOePw645QmRd9ytp91VGVQaolJKIk",
+      "https://i.picsum.photos/id/703/200/200.jpg?hmac=6zWxIBRmIf2e0jZTqvKBIwrc7wm-dPkvGky4go6Yyvg"
     ]
   },
   {
@@ -63,6 +65,10 @@ const projects = [
 ];
 
 export class App extends Component {
+  getProject(id) {
+    return projects[0];
+  }
+
   getComponent() {
     const path = window.location.pathname;
     const params = path.split("/").filter(param => param != "");
@@ -78,6 +84,12 @@ export class App extends Component {
           break;
         case "contact":
           component = <Contacts />;
+          break;
+        case "project":
+          if (params[1]) {
+            const project = this.getProject(params[1]);
+            component = <Project project={project} />;
+          }
           break;
       }
     }
