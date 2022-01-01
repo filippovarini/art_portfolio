@@ -15,6 +15,10 @@
   min-width: 350px;
 }
 
+.hidden {
+  display: none;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

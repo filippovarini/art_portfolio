@@ -7,6 +7,8 @@ import NotFound from "./pages/NotFound";
 import Bio from "./pages/Bio";
 import Contacts from "./pages/Contacts";
 import Project from "./pages/Project";
+import AdminLogin from "./components/adminAuth/adminAuth";
+import Admin from "./pages/Admin";
 
 const projects = [
   {
@@ -91,6 +93,8 @@ export class App extends Component {
             component = <Project project={project} />;
           }
           break;
+        case "admin":
+          component = <Admin />;
         default:
           break;
       }

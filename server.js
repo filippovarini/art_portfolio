@@ -1,25 +1,18 @@
 const express = require("express");
 const path = require("path");
-const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+const db = require("./db/MongoDB");
 
-/* Connect. */
-const db_secret = require("./config/keys").MONGO_URI;
-mongoose
-  .connect(db_secret, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  })
-  .then(() => {
-    console.log("MongoDB connected...");
-  })
-  .catch(error => {
-    console.log("error", error);
-  });
+/* Routers */
+const projectRouter = require("./routes/project");
 
 const app = express();
 
+/* Connect database */
+db.connect();
+
 app.use(bodyParser.json());
+app.use("/api/project", projectRouter);
 
 // rendering static assets
 if (process.env.NODE_ENV === "production") {
