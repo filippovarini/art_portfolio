@@ -12,9 +12,22 @@ export class AdminAuth extends Component {
     });
   };
 
-  handleSubmit = e => {
+  getHash = async psw => {
+    const hash = await fetch(`/user/hash?psw=${psw}`);
+    return hash;
+  };
+
+  handleSubmit = async e => {
     e.preventDefault();
-    alert(this.state.psw);
+    let hash = "";
+    try {
+      hash = await this.getHash(this.state.psw);
+    } catch (e) {
+      console.log(e);
+      alert("Internal server error. Retry!");
+    }
+    sessionStorage.setItem("auth", hash);
+    window.location = window.location.pathname;
   };
 
   render() {
